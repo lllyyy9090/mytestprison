@@ -1,0 +1,22 @@
+ <?xml version="1.0" encoding="UTF-8"?>  
+ <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="testServiceImpl" class="com.alibaba.test.aop.service.TestServiceImpl" />
+	<bean id="testInterceptor" class="com.alibaba.test.aop.intercept.TestInterceptor" />
+	<bean id="testService" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<!-- 代理接口 -->
+		<property name="proxyInterfaces">
+			<value>com.alibaba.test.aop.service.TestService</value>
+		</property>
+		<!-- 目标实现类 -->
+		<property name="target">
+			<ref local="testServiceImpl" />
+		</property>
+		<!-- 拦截器 -->
+		<property name="interceptorNames">
+			<list>
+				<value>testInterceptor</value>
+			</list>
+		</property>
+	</bean>
+</beans>
