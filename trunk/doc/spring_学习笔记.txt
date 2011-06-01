@@ -1,0 +1,34 @@
+
+1、ApplicationContext是BeanFactory的扩展
+   1)BeanFactory接口擅长于处理bean的初始化和配置，而ApplicationContext接口除了上述的工作化，还针对企业应用提供了许多基础支持，如事务处理和AOP
+   2)注入依赖(DI)：通过构造方法的参数、工厂方法的参数，或给由构造函数或工厂方法创建对象设置属性。
+   3)IoC: Inversion of Control
+   4)depends-on: 当某些bean需要特定bean实例化后再进行实例化时，需要指定bean的id，多个以逗号分隔。
+   5)lazy-init: 当某些bean不希望在ApplicationContext初始化时就提前实例化时，只有当其被使用时才真正进行实例化。
+   (121页 2011-05-31)
+
+2、Bean的生命周期
+   1)初始化顺序
+   @PostConsturct元注释
+   InitializingBean的afterpropertiesSet()定义
+   自定义init()方法配置
+   2)析构顺序
+   @PreDestroy
+   DisposableBean的destroy()定义
+   自定义destroy()方法
+
+3. AOP(概念要清楚，Demo要跟上，笔记要做好)
+   切面（aspect）
+   连接点(JoinPoint)
+   通知(Advice) 
+       通知类型：1)前置通知(Before advice)
+                 2)后置通知(After returning advice)
+                 3)异常通知(After throwing advice)
+                 4)最终通知(After (finally) advice)
+                 5)环绕通知(Around Advice)
+   切入点(PointCut)
+   引入(Introduction)
+   目标对象(Target Object)
+   AOP代理(AOP Proxy)
+   织入(Weaving)
+   6,7,8,9待读(重要),熟悉JMS
