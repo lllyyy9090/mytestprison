@@ -6,6 +6,7 @@ import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -29,6 +30,7 @@ public class TestAspectJ {
      	System.out.println("around....");
      	Object[] args = pjp.getArgs();// 被拦截的参数
 		if (null != args && args.length > 0) {
+			System.out.println("传入的参数值是: " + args[0]);
 			args[0] = "用aspectj注解方式修改";// 修改被拦截的参数
 			System.out.println("aspectj在修改....");
 		}

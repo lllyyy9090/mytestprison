@@ -5,6 +5,7 @@
    3)IoC: Inversion of Control
    4)depends-on: 当某些bean需要特定bean实例化后再进行实例化时，需要指定bean的id，多个以逗号分隔。
    5)lazy-init: 当某些bean不希望在ApplicationContext初始化时就提前实例化时，只有当其被使用时才真正进行实例化。
+   6)Lookup方法注入，还有一些模糊，加强理解
    (121页 2011-05-31)
 
 2、Bean的生命周期
@@ -32,3 +33,17 @@
    AOP代理(AOP Proxy)
    织入(Weaving)
    6,7,8,9待读(重要),熟悉JMS
+
+1，事务的传播行为
+
+        传播行为是事务应用于方法的边界，它定义了事务的建立，暂停等行为属性。
+
+在Spring中共有7种，EJB CMT共6种。 
+*PROPAGATION_MANDATORY:规定了方法必须在事务中运行，否则会抛出异常
+*PROPAGATION_NESTED:使方法运行在嵌套事务中，否则这个属性和PROPAGATION_REQUIRED属性的义相同
+*PROPAGATION_NEVER:使当前方法永远不在事务中运行，否则抛出异常
+*PROPAGATION_NOT_SUPPORTED:定义为当前事务不支持的方法，在该方法运行期间正在运行的事务会被暂停
+*PROPAGATION_REQUIRED:规定当前的方法必须在事务中，如果没有事务就创建一个新事务，一个新事务和方法一同开始，随着方法的返回或抛出异常而终止
+*PROPAGATION_REQUIRED_NEW:当前方法必须创建新的事务来运行，如果现存的事务正在运行就暂停它
+PROPAGATION_SUPPORTS:规定当前方法支持当前事务处理，但如果没有事务在运行就使用非事务方法执行
+以上定义Spring在事务中的传播行为分别对应EJB的事务CMT中的所有传播行为，其在PROPAGATION_NESTED是Spring在CMT之外定义的事务传播行为。 
