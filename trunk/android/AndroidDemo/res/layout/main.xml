@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1" android:orientation="vertical">
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/linearLayout1" android:orientation="vertical" android:layout_weight="1.05">
+        <WebView android:id="@+id/webView1" android:layout_width="match_parent" android:layout_height="match_parent"></WebView>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/linearLayout2" android:layout_weight="1.05" android:weightSum="1" android:background="#ffffff">
+    <Button android:layout_width="wrap_content" android:text="上次" android:layout_weight="0.14" android:layout_height="wrap_content" android:id="@+id/button1"></Button>
+    <Button android:layout_width="wrap_content" android:text="书库" android:layout_weight="0.14" android:layout_height="wrap_content" android:id="@+id/button2"></Button>
+    <Button android:layout_width="wrap_content" android:text="历史" android:layout_weight="0.14" android:layout_height="wrap_content" android:id="@+id/button3"></Button>
+    <Button android:layout_width="wrap_content" android:text="下载" android:layout_weight="0.14" android:layout_height="wrap_content" android:id="@+id/button4"></Button>
+    <Button android:layout_width="wrap_content" android:text="有了" android:layout_weight="0.14" android:layout_height="wrap_content" android:id="@+id/button5"></Button>
+    
+    </LinearLayout>
+    
+</LinearLayout>
