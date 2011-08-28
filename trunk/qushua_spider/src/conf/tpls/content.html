@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<title>${Game.gamename} - ${GameTypeName} - www.qushua.com 去耍小游戏 4399${GameTypeName}小游戏 </title>
+<meta name="DESCRIPTION" content="${Game.gamename}小游戏, 4399${Game.gamename},3366${Game.gamename}, 去耍小游戏">
+<meta name="keywords" content="${Game.gamename}小游戏, 4399${Game.gamename},3366${Game.gamename}, 去耍小游戏">
+<meta http-equiv="x-ua-compatible" content="ie=7" /> 
+<script src="http://res.qushua.com/js/allad.js"></script>
+<script src="http://res.qushua.com/js/base.js"></script>
+<link rel="shortcut icon" href="/favicon.ico" /> 
+<link href="http://res.qushua.com/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+<script>var gamename = "$!{Game.gamename}";</script>
+</head>
+<body>
+  #parse("/tpls/header.html") 
+  <div id="header_ad"><center><script>ad_content_top();</script></center></div>
+  <div id="main">
+    <div class="play_title">
+      <a href="/">首页</a> &gt;&gt; <a href="${GameTypeLink}">${GameTypeName}</a> &gt;&gt; $!{Game.gamename}
+    </div>
+    <!-- <div class="play_history"><script>histroy();</script></div>   -->    
+    <div class="play_intro">
+      <h3>&nbsp;&nbsp;$!{Game.gamename} </h3>			 
+      <div class="game_main">
+        <div class="pic">            
+          <div class="img"><a href="play/${Game.gameid}.html"><img src="$!{Game.pic}" border="0" width="300" height="200" alt="在线玩$!{Game.gamename}"></a></div>
+          <div class="button"><center><div><a href="play/${Game.gameid}.html">开始小游戏</a></div></center></div>
+        </div>
+        <div class="info">			     
+          <div class="intro_ad" style="width:250px;height:250px;float: right; margin-top: 2px; margin-right: 2px;"><center><script>ad_content_intro();</script></center></div>
+		  <ul>
+		    <li>名称：<span>$!{Game.gamename} </span></li>
+		    <li>语言：中文/英文 </li>
+		    <li>分类：<a target="_blank" href="index.html">${GameTypeName}</a></li>
+		    <li>标签：
+		    #foreach( $one in $Game.tags )${one} #end
+		    </li>
+		    <li>大小：$!{Game.size} </li>
+		    </ul>
+		    <hr>
+		    <span>$!{Game.gamename} 小游戏简介</span>：$!{Game.intro}
+		         
+        </div>			   
+        <div class="clear"></div>	
+      </div>
+      <div class="clear"></div>	
+    </div><!--End play_intro-->
+    <div class="clear"></div>
+    <div id="middle_ad"><center><script>ad_content_middle();</script></center></div>	
+
+    <!-- 推荐游戏 begin-->
+    <div class="content_top">
+      <div class="title"><h1>推荐游戏</h1></div>
+      #foreach( $one in $TopGameList )
+      <div class="one_game">
+        <a href="${one.gameid}.html">
+          <img src="${one.smallpic}" width="94" height="73" border="0" alt="在线玩$!{one.gamename}-Flash小游戏"/></a>
+        <a href="${one.gameid}.html"> ${one.gamename} </a>
+      </div>
+      #end
+      <div class="clear"></div>
+   </div><!-- 推荐游戏 end-->
+ </div> 
+ <div class="clear"></div>	
+ <div id="bottom_ad" style="height:90px;"><center><script>ad_content_bottom();</script></center></div>	
+ <div class="clear"></div>
+ #parse("/tpls/footer.html")
+</body>
+</html>

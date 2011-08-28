@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<title>${Game.gamename} - ${GameTypeName} - www.qushua.com 去耍小游戏 4399${GameTypeName}小游戏 </title>
+<meta name="DESCRIPTION" content="${Game.gamename}小游戏, 4399${Game.gamename},3366${Game.gamename}, 去耍小游戏">
+<meta name="keywords" content="${Game.gamename}小游戏, 4399${Game.gamename},3366${Game.gamename}, 去耍小游戏">
+<meta http-equiv="x-ua-compatible" content="ie=7" /> 
+<script src="http://res.qushua.com/js/allad.js"></script>
+<script src="http://res.qushua.com/js/base.js"></script>
+<link rel="shortcut icon" href="/favicon.ico" /> 
+<link href="http://res.qushua.com/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+<script src="${Game.swfhost}"></script>
+<script>var gamename = "$!{Game.gamename}";</script>
+</head>
+<body>
+	#parse("/tpls/header.html") 
+    </div>
+    <div class="clear"></div>    
+	<div id="main">
+		<div class="play_title">
+		<span style="float:left">
+		<a href="/">首页</a> &gt;&gt; <a href="../index.html">$!{GameTypeName}</a> &gt;&gt; $!{Game.gamename} </span>
+		<span style="float:right"><a id="22"></a>【<a href="javascript:;" target="_self" title="点击收藏“去耍小游戏” www.qushua.com" onclick="addSiteToFav();return false;">收藏本站</a>】<a href="javascript:GoToBestPosition()" target="_self"><b>玩游戏最佳位置</b></a></span></div>
+        <div class="play_swf">            	
+			<div id="downProgress" style="">
+				<div style="float: left; width: 60px;">进度条：</div>
+				<div id="barborder" style=""><div id="bar" style="width: 558px;"></div></div>
+				<div id="downStatus">下载完毕</div>
+			</div>
+			<div class="clear"></div>
+			<div class="play_zone" style="float:left;">
+				<div id="swfdiv" style="display:none">
+					<SCRIPT LANGUAGE='javascript'>
+					var swf = webServer + "$!{Game.swf}";
+					var w = 0;
+					var h = 0;
+					document.write ("<OBJECT ID='flashgame' classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0' width='"+w+"' height='"+h+"'>\n");
+					document.write ("<PARAM NAME='allowScriptAccess' VALUE='never'>\n");
+					document.write ("<PARAM NAME='allowNetworking' VALUE='internal'>\n");
+					document.write ("<PARAM NAME='movie' VALUE='"+swf+"'>\n");
+					document.write("<embed id='flashgame1' name='flashgame1' src='"+swf+"' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash' width='"+w+"' height='"+h+"' allowScriptAccess='nerver' allowNetworking='internal'></embed>");
+					document.write ("<PARAM NAME='quality' VALUE='high'>\n");
+					document.write ("</OBJECT>\n");
+					</SCRIPT>
+				</div>				
+				<div id="addiv" >
+					<iframe src="http://res.qushua.com/loading.html" width="672" height="484" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+				</div>
+				<div class="clear"></div>
+				<div id="play_op">
+					  <center>
+						<input type="button" onclick="Replay()" class="ReplayBtn"><input type="button" onclick="FullPlay(swf)" class="FullScreenBtn" />
+					  </center>                
+				</div>
+			</div>
+			
+			<script>load();ReSize();</script>
+			<div id="relate_div" >
+			  <center>
+			    <div class="wh_250"><script>ad_play_right();</script></div>
+			    #foreach( $one in $TopGameList )
+			    <div class="one_game">
+			    <a href="../${one.gameid}.html" title="点击玩耍-${one.gamename}">
+			    <img src="${one.smallpic}" width="56" height="50" border="0" alt="${one.gamename}-去耍小游戏"/>
+			    </a><a href="../${one.gameid}.html" title="点击玩耍-${one.gamename}"> ${one.gamename} </a>
+			    </div>
+                #end
+			  </center>
+			</div>
+			<div class="clear"></div>
+       </div>		
+       <div class="play_option">        	
+            <div style="margin-top:5px;">
+			<font color="blue">如果觉得本站好玩，请把www.qushua.com告诉你的朋友! 
+			<a href="javascript:;" onclick="copyurl(gamename);return false;">点击复制链接</a></font>
+			<span style="color:red;"><b>小提示</b></span>→<a href="javascript:;" onclick="addSiteToFav();return false;" target="_self" title="点击收藏“去耍小游戏” www.qushua.com">按此添加收藏,方便下次再玩</a></div>
+       </div> 
+       <div id="header_ad"><center><script>ad_play_middle();</script></center></div>
+       <div class="play_intro">
+         <div class="title"><h1>游戏介绍</h1> </div>
+		 <div class="clear"></div>
+         <p>${Game.intro}</p>		 
+       </div>	
+       <div id="header_ad"><center><script>ad_play_middle2();</script></center></div>   
+	   <!-- 推荐游戏 begin-->
+	   <div id="cen1_list_d">
+          #foreach( $one in $GameTypeTags)             
+            <div class="typetag"><h2><a href="/${one.get(0).pinyin}">${one.get(0).gametypename}小游戏</a></h2>
+            #foreach( $sub in $one) 
+              <a href="/tags/${sub.seqid}.html" target="_blank" title="小游戏专题：${sub.tag}" #if(${sub.seqid}%7==0)class="green" #end>${sub.tag}</a> 
+            #end
+            </div>
+	      #end
+       </div>
+</div>
+	   <!-- 推荐游戏 end-->
+	</div>	 	
+    <div class="clear"></div>
+    <div id="bottom_ad" style="height:90px;"><center><script>ad_play_bottom();</script></center></div>	
+    <div class="clear"></div>	
+	#parse("/tpls/footer.html")
+</body>
+</html>
