@@ -212,10 +212,15 @@ public class Spider {
 	}
 	private String getSwfHost(String content){
 		//<SCRIPT LANGUAGE="JavaScript" src="/js/server12.gif"></SCRIPT>
-		if(content.indexOf(".gif\"></SCRIPT>")>0){
+		if(content.indexOf("/js/server")>0){
 			int bidx = content.indexOf("/js/server");
 			if(bidx > 0){
-				return "http://www.4399.com" + content.substring(bidx,content.indexOf("\"></SCRIPT>",bidx));
+				int eidx  = content.indexOf("\"></SCRIPT>",bidx);
+				if(eidx <= 0){
+					eidx = content.indexOf("\"></script>",bidx);
+				}
+				if(eidx > bidx && eidx-bidx < 100)
+				return "http://www.4399.com" + content.substring(bidx,eidx);
 			}
 		}
 		return "";
