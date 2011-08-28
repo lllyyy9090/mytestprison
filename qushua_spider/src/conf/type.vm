@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${GameType}-www.qushua.com 去耍小游戏</title>
+<meta name="DESCRIPTION" content="S_CXN小游戏,小游qushua.com在线小游戏,flash小游戏,在线小游戏,小游戏下载,网络小游戏,经典小游戏,flash游戏,迷你小游戏,免费小游戏,S_GAMESORT小游戏,qq小游戏,在线玩小游戏,桌面小游戏">
+<meta name="keywords" content="小游戏,小游qushua.com在线小游戏,flash小游戏,在线小游戏,小游戏下载,网络小游戏,经典小游戏,flash游戏,迷你小游戏,免费小游戏,S_GAMESORT小游戏,qq小游戏,在线玩小游戏,桌面小游戏">
+<script src="../js/ad.js"></script>
+<script src="../js/base.js"></script>
+<link href="../css/style.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<body>
+	<div id="header">
+    <div class="top">
+      <div class="f_l w_100 m_l_10" ><a href="http://www.qushua.com" title="去耍小游戏，玩的岂是寂寞"><img src="../images/s_logo.gif" width="140" height="23" border="0"/></a></div>
+   	  <div class="f_l " style="width:680px;color:red;" align="center">www.qushua.com 最大的在线休闲游戏中心,为了下次能再玩,请牢记本站www.qushua.com的网址</div>
+    	<div class="f_r m_r_10 fav"><a href="javascript:window.external.AddFavorite('http://www.qushua.com/', '“■去耍小游戏”www.qushua.com')" class="dxs" target="_self" title="点击收藏“去耍小游戏” www.qushua.com">收藏qushua小游戏</a></div>
+    </div>
+    <div class="logo">
+    <div class="logo_img"><a href="http://www.qushua.com" title="去耍小游戏，玩的岂是寂寞"><img src="../images/logo.png" alt="去耍小游戏，玩的岂是寂寞" width="165" height="60" border="0"/></a></div>
+    <div class="logo_center"><script>ad_header_center();</script></div>
+    <div class="logo_right"><script>ad_header_right();</script></div>
+    </div>
+    <div class="menu"><ul>
+     <li><a href="/" target="_blank" title="去耍小游戏">首页</a></li>
+     #foreach( $type in $GameTypeList )
+       #if($type.isSelected())
+         <li><span class="selected">$type.getTypename()</span></a></li>
+       #else
+         <li><a href="$type.getTypeurl()" title="$type.getTypename()类小游戏">$type.getTypename()</span></a></li>
+       #end
+     #end
+    	<li><a href="http://www.930tv.com" target="_blank" title="在线影院，速度快">影院</li><li><a href="http://www.4462.com" target="_blank" title="4462网址导航">导航</a></li>
+    </ul></div>
+    
+    </div>
+    
+	<div id="header_ad"></div>
+    
+	<div id="main">
+		<div id="left">
+		 #foreach( $game in $GameList )
+            <div class="one_game">
+            <a href="flash_${game.getGameid()}.html" title="点击玩耍-$game.getGamename()"><img src="$game.getSpic()" width="100" height="75" border="0" alt="$game.getGamename()-去耍小游戏"/></a>
+            <a href="flash_${game.getGameid()}.html" title="点击玩耍-$game.getGamename()">#if($game.getGamename().length()>7) $game.getGamename().substring(0,7) #else $game.getGamename() #end</a>
+            </div>
+         #end          
+        </div>
+		<div id="right">
+        <h5>总排行</h5>
+        <ul>
+         
+        #foreach( $game in $RankGameList )
+        ##if($velocityCount<=1)  
+            <li class="c_red">$velocityCount. <a href="flash_${game.getGameid()}.html" title="点击玩耍-$game.getGamename()">#if($game.getGamename().length()>13) $game.getGamename().substring(0,13) #else $game.getGamename() #end</a></li>            
+        #end 
+        
+        </ul>
+        </div>
+	</div>
+    
+	<div id="middle_ad"><center><script>ad_middle();</script></center></div>
+	<div id="all">
+    <h5>动作类游戏</h5>
+    <ul>
+      #foreach( $game in $AllGameList )
+        ##if($velocityCount<=1)  
+            <li>$velocityCount. <a href="flash_${game.getGameid()}.html" title="点击玩耍-$game.getGamename()">#if($game.getGamename().length()>10) $game.getGamename().substring(0,10) #else $game.getGamename() #end</a></li>            
+        #end 
+    </ul>
+    </div>
+
+    <div class="clear"></div>
+	<div id="footer_ad"><center><script>ad_middle();</script></center></div>
+	<div id="footer">
+     
+      <div style="width:100%;" align="center">
+        <table width="558">
+          <tr>
+            <td colspan="2" align="left">作品版权归作者所有，如果无意之中侵犯了您的版权，请来信告知，本站将在3个工作日内删除</td>
+          </tr>
+          <tr >
+            <td width="103" rowspan="2" ><img src="../images/hel.gif" /></td>
+            <td width="443" align="left" style="color:#ff6600">抵制不良游戏，拒绝盗版游戏 注意自我保护，谨防受骗上当.....</td>
+          </tr>
+          <tr>
+            <td align="left" style="color:#ff6600"> 适度游戏益脑，沉迷游戏伤身 合理安排时间，享受健康生活.....</td>
+          </tr>
+          <tr>
+            <td colspan="2" align="left"> 管理邮箱：1000dou#gmail.com(请将#替换成@) 站长QQ:1042365061 粤ICP备09208606号</td>
+          </tr>
+        </table>
+      </div>  
+    
+     </div>
+    <div id="site_analysis" style="display:none;"><script>stat();</script></div>
+</body>
+</html>
