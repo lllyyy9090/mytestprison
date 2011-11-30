@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration scan="true" scanPeriod="30 seconds">
+	<Property name="log.base" value="/" />
+	<appender name="base" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${log.base}serverout.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<FileNamePattern>${log.base}/serverout.%i.log</FileNamePattern>
+			<MinIndex>1</MinIndex>
+            <MaxIndex>12</MaxIndex>
+		</rollingPolicy>		
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%msg%n</Pattern>
+		</layout>
+		
+	</appender>
+ 
+	<root level="debug">
+		<appender-ref ref="base" />
+	</root>
+</configuration>

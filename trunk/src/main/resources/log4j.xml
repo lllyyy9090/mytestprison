@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="/log4j-test.log" />
+		<param name="BufferSize" value="8129" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="200MB" />
+		<param name="MaxBackupIndex" value="2000" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d (%t) [%24F:%-3L:%-5p]%x %m%n" />
+		</layout>
+	</appender>
+
+	<root>
+		<priority value="debug" />
+		<appender-ref ref="FILE" />
+	</root>
+
+</log4j:configuration>
