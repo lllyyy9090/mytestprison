@@ -39,6 +39,8 @@
 			</list>
 		</property> 
 	</bean>
+	<bean id="userBo" class="com.alibaba.jtester.bo.UserBoImpl" />
+	<bean id="userDao" class="com.alibaba.jtester.dao.UserDaoImpl" />
 	<context:annotation-config/>
     <context:component-scan base-package="com.alibaba"/>
 	<aop:aspectj-autoproxy />
