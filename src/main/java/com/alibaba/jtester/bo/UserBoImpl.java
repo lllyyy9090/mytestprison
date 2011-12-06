@@ -6,8 +6,9 @@ import com.alibaba.jtester.vo.User;
 public class UserBoImpl implements IUserBo {
 	private IUserDao userDao;
 
-	public void addUser() {
+	public String addUser() {
 		this.getUserDao().addUser();
+		return "success";
 	}
 
 	public User getUser() {

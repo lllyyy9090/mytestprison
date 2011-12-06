@@ -3,7 +3,7 @@ package com.alibaba.jtester.bo;
 import com.alibaba.jtester.vo.User;
 
 public interface IUserBo {
-	public void addUser();
+	public String addUser();
 
 	public User getUser();
 
