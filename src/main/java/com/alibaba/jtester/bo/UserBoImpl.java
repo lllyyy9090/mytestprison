@@ -3,19 +3,19 @@ package com.alibaba.jtester.bo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.jtester.dao.IUserDao;
-import com.alibaba.jtester.vo.User;
+import com.alibaba.jtester.vo.Users;
 
 public class UserBoImpl implements IUserBo {
 	@Autowired
 	private IUserDao userDao;
 
-	public String addUser() {
-		this.userDao.addUser();
+	public String addUser(Users user) {
+		this.userDao.addUser(user);
 		return "success";
 	}
 
-	public User getUser() {
-		return this.userDao.getUser();
+	public Users getUser(Users user) {
+		return this.userDao.getUser(user);
 	}
 
 	public void removeUser() {

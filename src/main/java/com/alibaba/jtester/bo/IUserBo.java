@@ -1,11 +1,11 @@
 package com.alibaba.jtester.bo;
 
-import com.alibaba.jtester.vo.User;
+import com.alibaba.jtester.vo.Users;
 
 public interface IUserBo {
-	public String addUser();
+	public String addUser(Users user);
 
-	public User getUser();
+	public Users getUser(Users user);
 
 	public void removeUser();
 
