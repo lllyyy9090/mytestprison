@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>  
 <beans xmlns="http://www.springframework.org/schema/beans"
-
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
-
-	xmlns:aop="http://www.springframework.org/schema/aop"
-
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-
-           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-
-           http://www.springframework.org/schema/context
-
-           http://www.springframework.org/schema/context/spring-context-2.5.xsd
-
-           http://www.springframework.org/schema/aop
-
-           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
-	<bean id="userBo" class="com.alibaba.jtester.bo.UserBoImpl" />
-	<bean id="userDao" class="com.alibaba.jtester.dao.UserDaoImpl" />
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	                       http://www.springframework.org/schema/context
+	                       http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	                       http://www.springframework.org/schema/aop
+	                       http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+	  >
+    <!-- 启用autowire注解注入的方式 BEGIN -->
 	<context:annotation-config/>
     <context:component-scan base-package="com.alibaba"/>
-	<aop:aspectj-autoproxy />
+    <!-- 启用autowire注解注入的方式 END -->
+	<bean id="userBo" class="com.alibaba.jtester.bo.UserBoImpl" />
+	<bean id="userDao" class="com.alibaba.jtester.dao.UserDaoImpl" />
+	
+	<!-- <aop:aspectj-autoproxy /> -->
 </beans>
 

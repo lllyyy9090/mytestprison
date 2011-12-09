@@ -1,33 +1,28 @@
 package com.alibaba.jtester.bo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.alibaba.jtester.dao.IUserDao;
 import com.alibaba.jtester.vo.User;
 
 public class UserBoImpl implements IUserBo {
+	@Autowired
 	private IUserDao userDao;
 
 	public String addUser() {
-		this.getUserDao().addUser();
+		this.userDao.addUser();
 		return "success";
 	}
 
 	public User getUser() {
-		return this.getUserDao().getUser();
+		return this.userDao.getUser();
 	}
 
 	public void removeUser() {
-		this.getUserDao().removeUser();
+		this.userDao.removeUser();
 	}
 
 	public void updateUser() {
-		this.getUserDao().updateUser();
-	}
-
-	public IUserDao getUserDao() {
-		return userDao;
-	}
-
-	public void setUserDao(IUserDao userDao) {
-		this.userDao = userDao;
+		this.userDao.updateUser();
 	}
 }

@@ -3,9 +3,6 @@ package com.alibaba.test.log;
 import org.slf4j.Logger;  
 import org.slf4j.LoggerFactory;  
   
-import ch.qos.logback.classic.LoggerContext;  
-import ch.qos.logback.classic.joran.JoranConfigurator;  
-import ch.qos.logback.core.joran.spi.JoranException;  
   
 /** 
  * @author Last changed by: $Author$ 
@@ -111,16 +108,16 @@ public class TestLogback {
     }  
   
     private static void initConfig() {  
-        // assume SLF4J is bound to logback in the current environment  
-        LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();  
-  
-        try {  
-            JoranConfigurator configurator = new JoranConfigurator();  
-            configurator.setContext(lc);  
-            configurator.doConfigure("src/main/resources/logback.xml");  
-        } catch (JoranException je) {  
-            // StatusPrinter will handle this  
-        }  
+//        // assume SLF4J is bound to logback in the current environment  
+//        LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();  
+//  
+//        try {  
+//            JoranConfigurator configurator = new JoranConfigurator();  
+//            configurator.setContext(lc);  
+//            configurator.doConfigure("src/main/resources/logback.xml");  
+//        } catch (JoranException je) {  
+//            // StatusPrinter will handle this  
+//        }  
   
         // create the loggers  
         LoggerFactory.getLogger("perfTest");  
