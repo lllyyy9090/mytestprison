@@ -56,10 +56,28 @@
 		<!-- <dependency> <groupId>ch.qos.logback</groupId> <artifactId>logback-classic</artifactId> 
 			<version>0.9.26</version> </dependency> <dependency> <groupId>ch.qos.logback</groupId> 
 			<artifactId>logback-core</artifactId> <version>0.9.26</version> </dependency> -->
+
 		<dependency>
 			<groupId>com.alibaba.shared</groupId>
 			<artifactId>toolkit.sandbox.jtester</artifactId>
-			<version>1.1.6</version>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.china.shared</groupId>
+			<artifactId>testerx.jtester-ext</artifactId>
+			<version>1.1.1-SNAPSHOT</version>
+			<scope>test</scope>
+			<exclusions>
+				<!-- 会跟项目中现有的slf4j冲突 -->
+				<exclusion>
+					<groupId>com.alibaba.external</groupId>
+					<artifactId>org.slf4j.slf4j-simple</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.alibaba.external</groupId>
+					<artifactId>test.junit</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 </project>
