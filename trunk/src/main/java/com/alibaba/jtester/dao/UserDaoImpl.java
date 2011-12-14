@@ -30,6 +30,8 @@ public class UserDaoImpl  implements IUserDao{
 				                     user.getRegIp()
 				                     };
 		jdbcTemplate.update(sql,objs);
+		sql = "select tao_account from users where user_id='"+user.getUserId()+"'";
+		System.out.println(jdbcTemplate.queryForObject(sql,String.class));
 	}
 
 	public Users getUser(Users user) {

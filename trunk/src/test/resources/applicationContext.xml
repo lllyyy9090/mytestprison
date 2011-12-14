@@ -23,7 +23,7 @@
 	</bean>
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" autowire="byName">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://10.20.168.57:3306/musketeer_test?useUnicode=true&amp;characterEncoding=GBK" />
+		<property name="url" value="jdbc:mysql://10.20.168.567:3306/musketeer_test?useUnicode=true&amp;characterEncoding=GBK" />
 		<property name="username" value="musketeer_test" />
 		<property name="password" value="musketeer_test" />
 	</bean>
