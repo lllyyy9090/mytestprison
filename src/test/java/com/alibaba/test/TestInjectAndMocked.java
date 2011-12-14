@@ -1,14 +1,19 @@
 package com.alibaba.test;
 
+import org.testng.annotations.Test;
+import java.util.Date;
+
 import mockit.Mocked;
 
 import org.jtester.annotations.AutoBeanInject;
 import org.jtester.annotations.SpringApplicationContext;
 import org.jtester.annotations.SpringBeanByName;
+import org.jtester.annotations.Transactional;
+import org.jtester.annotations.Transactional.TransactionMode;
 import org.jtester.testng.JTester;
-import org.testng.annotations.Test;
 
 import com.alibaba.jtester.bo.IUserBo;
+import com.alibaba.jtester.dao.IUserDao;
 import com.alibaba.jtester.vo.Users;
 /**
  * JTester应用示例系统1:<br/>
@@ -35,6 +40,20 @@ public class TestInjectAndMocked extends JTester{
 	public void testAddUserByInject(){
 		//验证
 		Users user = new Users();
+		user.setUserId("test_1");
+		user.setInviteUserId("test_2");
+		user.setName("test");
+		user.setTaoAccount("闪亮的张");
+		user.setAlipayAccount("alipay_account@126.com");
+		user.setPwd("111111");
+		user.setSex((byte)1);
+		user.setBirth(new Date());
+		user.setCity("杭州");
+		user.setProvince("浙江");
+		user.setEmail("test@126.com");
+		user.setMobile("11111111111");
+		user.setMoney(99f);
+		user.setRegIp(2222222222222l);
 		want.string(userBo.addUser(user)).isEqualTo("success");
 	}
 	
@@ -42,17 +61,17 @@ public class TestInjectAndMocked extends JTester{
 	 * 通过Mocked
 	 */
 	@Test
-	public void testAddUserByMocked(){
+	public void tesstAddUserByMocked(){
+		final Users user = new Users();
 		//录制
 		new Expectations(){
 			{
-				Users user = new Users();
 				userBo2.addUser(user);//方法名
 				result = "mocked";//返回值
 			}
 		};
 		//验证
-		Users user = new Users();
+		
 		want.string(userBo2.addUser(user)).isEqualTo("mocked");
 	}
 }
