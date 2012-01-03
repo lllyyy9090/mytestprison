@@ -8,12 +8,9 @@ import mockit.Mocked;
 import org.jtester.annotations.AutoBeanInject;
 import org.jtester.annotations.SpringApplicationContext;
 import org.jtester.annotations.SpringBeanByName;
-import org.jtester.annotations.Transactional;
-import org.jtester.annotations.Transactional.TransactionMode;
 import org.jtester.testng.JTester;
 
 import com.alibaba.jtester.bo.IUserBo;
-import com.alibaba.jtester.dao.IUserDao;
 import com.alibaba.jtester.vo.Users;
 /**
  * JTester应用示例系统1:<br/>
